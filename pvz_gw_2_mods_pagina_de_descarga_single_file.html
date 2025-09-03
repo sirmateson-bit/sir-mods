@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sir Matesón - Mods PVZ GW</title>
+  <link href="https://fonts.cdnfonts.com/css/cafeteria-black" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: url('fondo-placeholder.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #000;
+      font-family: 'Cafeteria Black', sans-serif;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #000;
+      transition: transform 0.15s ease;
+    }
+    .socials a img {
+      width: 20px;
+      height: 20px;
+    }
+    .socials a:active {
+      transform: scale(0.9);
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero h2 {
+      font-size: 28px;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .hero h2 img {
+      width: 28px;
+      height: 28px;
+      vertical-align: middle;
+    }
+    .mods {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .mod-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      background-size: cover;
+      background-position: center;
+    }
+    .mod-box:active {
+      transform: scale(0.95);
+    }
+    .mod-icon {
+      width: 60px;
+      height: 60px;
+      background: #000;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .mod-info h3 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+    }
+    .mod-info p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .gw1 {
+      background-image: url('gw1-placeholder.jpg');
+    }
+    .gw2 {
+      background-image: url('gw2-placeholder.jpg');
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sir Matesón</h1>
+    <div class="socials">
+      <a href="https://youtube.com" target="_blank"><img src="youtube-placeholder.png" alt="YouTube"></a>
+      <a href="https://twitch.tv" target="_blank"><img src="twitch-placeholder.png" alt="Twitch"></a>
+      <a href="https://twitter.com" target="_blank"><img src="twitter-placeholder.png" alt="Twitter"></a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h2><img src="emoji-left.png" alt="Emoji"> Mods para Plants vs Zombies: Garden Warfare y Plants vs Zombies: Garden Warfare 2,<br/>hechos por Sir Matesón <img src="emoji-right.png" alt="Emoji"></h2>
+  </div>
+
+  <div class="mods">
+    <div class="mod-box gw1" onclick="window.location.href='mod1.zip'">
+      <div class="mod-icon"></div>
+      <div class="mod-info">
+        <h3>Nombre del Mod GW1</h3>
+        <p>Descripción placeholder del mod para Garden Warfare 1.</p>
+      </div>
+    </div>
+
+    <div class="mod-box gw2" onclick="window.location.href='mod2.zip'">
+      <div class="mod-icon"></div>
+      <div class="mod-info">
+        <h3>Nombre del Mod GW2</h3>
+        <p>Descripción placeholder del mod para Garden Warfare 2.</p>
+      </div>
+    </div>
+
+    <div class="mod-box gw1" onclick="window.location.href='mod3.zip'">
+      <div class="mod-icon"></div>
+      <div class="mod-info">
+        <h3>Otro Mod GW1</h3>
+        <p>Otra descripción placeholder para un mod de Garden Warfare 1.</p>
+      </div>
+    </div>
+
+    <div class="mod-box gw2" onclick="window.location.href='mod4.zip'">
+      <div class="mod-icon"></div>
+      <div class="mod-info">
+        <h3>Otro Mod GW2</h3>
+        <p>Otra descripción placeholder para un mod de Garden Warfare 2.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
