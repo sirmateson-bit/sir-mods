@@ -4,19 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sir Matesón - Mods PVZ GW</title>
-  <link href="https://fonts.cdnfonts.com/css/cafeteria-black" rel="stylesheet">
+  <!-- Fuente local, debes tener la carpeta /fonts con el archivo -->
   <style>
+    @font-face {
+      font-family: 'CafeteriaBlack';
+      src: url('fonts/Cafeteria-Black.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       margin: 0;
       background: url('fondo-placeholder.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
-      font-family: 'Cafeteria Black', sans-serif;
-      text-shadow: -1px -1px 0 #000,
-                   1px -1px 0 #000,
-                  -1px  1px 0 #000,
-                   1px  1px 0 #000; /* borde negro al texto */
+      font-family: 'CafeteriaBlack', sans-serif;
+      -webkit-text-stroke: 2px #000; /* outline más limpio */
     }
+
     header {
       display: flex;
       align-items: center;
@@ -24,9 +29,10 @@
       padding: 20px;
     }
     header h1 {
-      font-size: 22px;
+      font-size: 44px; /* el doble que antes */
       margin: 0;
     }
+
     .socials {
       display: flex;
       gap: 12px;
@@ -48,20 +54,22 @@
     .socials a:active {
       transform: scale(0.9);
     }
+
     .hero {
       text-align: center;
       padding: 50px 20px;
     }
     .hero h2 {
-      font-size: 28px;
+      font-size: 56px; /* antes 28px */
       margin: 0;
       line-height: 1.4;
     }
     .hero h2 img {
-      width: 28px;
-      height: 28px;
+      width: 84px; /* triple de 28px */
+      height: 84px;
       vertical-align: middle;
     }
+
     .mods {
       max-width: 900px;
       margin: 0 auto;
@@ -70,6 +78,7 @@
       flex-direction: column;
       gap: 20px;
     }
+
     .mod-box {
       display: flex;
       align-items: flex-start;
@@ -80,32 +89,51 @@
       transition: transform 0.15s ease;
       background-size: cover;
       background-position: center;
-      border: 2px solid #000; /* borde negro */
-      box-shadow: 0 6px 12px rgba(0,0,0,0.6); /* sombra debajo */
+      border: 2px solid #000;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
     }
     .mod-box:active {
       transform: scale(0.95);
     }
+
+    /* overlays para GW1 y GW2 */
+    .mod-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .gw1::after {
+      background: rgba(0,255,0,0.25); /* verde */
+    }
+    .gw2::after {
+      background: rgba(128,0,128,0.25); /* morado */
+    }
+
     .mod-icon {
-      width: 60px;
-      height: 60px;
-      background: #000;
+      width: 80px; /* más grande */
+      height: 80px;
       border-radius: 8px;
       flex-shrink: 0;
+      background: #fff url('icon-placeholder.png') no-repeat center center;
+      background-size: contain;
+      position: relative;
+      z-index: 1;
+    }
+
+    .mod-info {
+      position: relative;
+      z-index: 1;
     }
     .mod-info h3 {
       margin: 0 0 8px 0;
-      font-size: 18px;
+      font-size: 36px; /* antes 18px */
     }
     .mod-info p {
       margin: 0;
-      font-size: 14px;
-    }
-    .gw1 {
-      background-image: url('gw1-placeholder.jpg');
-    }
-    .gw2 {
-      background-image: url('gw2-placeholder.jpg');
+      font-size: 28px; /* antes 14px */
     }
   </style>
 </head>
@@ -124,32 +152,32 @@
   </div>
 
   <div class="mods">
-    <div class="mod-box gw1" onclick="window.location.href='mod1.zip'">
-      <div class="mod-icon"></div>
+    <div class="mod-box gw1" onclick="window.location.href='mod1.zip'" style="background-image:url('gw1-placeholder.jpg')">
+      <div class="mod-icon" style="background-image:url('icon-gw1.png')"></div>
       <div class="mod-info">
         <h3>San Martín - Especial 9 de Julio</h3>
         <p>Este mod convierte al General Supremo, en el libertador Don José de San Martín, también cambiando algunas texturas (como las portadas de Jardines y Cementerios y Derrotar por Equipos) para que tengan temática de independencia. </p>
       </div>
     </div>
 
-    <div class="mod-box gw2" onclick="window.location.href='mod2.zip'">
-      <div class="mod-icon"></div>
+    <div class="mod-box gw2" onclick="window.location.href='mod2.zip'" style="background-image:url('gw2-placeholder.jpg')">
+      <div class="mod-icon" style="background-image:url('icon-gw2.png')"></div>
       <div class="mod-info">
         <h3>Nombre del Mod GW2</h3>
         <p>Descripción placeholder del mod para Garden Warfare 2.</p>
       </div>
     </div>
 
-    <div class="mod-box gw1" onclick="window.location.href='mod3.zip'">
-      <div class="mod-icon"></div>
+    <div class="mod-box gw1" onclick="window.location.href='mod3.zip'" style="background-image:url('gw1-placeholder.jpg')">
+      <div class="mod-icon" style="background-image:url('icon-gw1-2.png')"></div>
       <div class="mod-info">
         <h3>Otro Mod GW1</h3>
         <p>Otra descripción placeholder para un mod de Garden Warfare 1.</p>
       </div>
     </div>
 
-    <div class="mod-box gw2" onclick="window.location.href='mod4.zip'">
-      <div class="mod-icon"></div>
+    <div class="mod-box gw2" onclick="window.location.href='mod4.zip'" style="background-image:url('gw2-placeholder.jpg')">
+      <div class="mod-icon" style="background-image:url('icon-gw2-2.png')"></div>
       <div class="mod-info">
         <h3>Otro Mod GW2</h3>
         <p>Otra descripción placeholder para un mod de Garden Warfare 2.</p>
